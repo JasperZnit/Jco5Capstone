@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="requestStyle.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
   </head>
   <body>
@@ -24,38 +26,38 @@
         <div class="side-menu">
           <ul>
             <li>
-              <a href="" class="active">
+              <a href="#content-dashboard" class="active" title="Dashboard">
                 <span class="las la-home"></span>
                 <small>Dashboard</small>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#content-profile" title="profile">
                 <span class="las la-user-alt"></span>
                 <small>Profile</small>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#content-mailbox" title="Mailbox">
                 <span class="las la-envelope"></span>
                 <small>Mailbox</small>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="#content-request" title="Request">
                 <span class="las la-scroll"></span>
                 <small>Requests</small>
               </a>
             </li>
             <li>
-              <a href="">
-                <span><i class="las la-id-card"></i></span>
+              <a href="#content-validate" title="Validate">
+                <span class="las la-id-card"></span>
                 <small>Validate</small>
               </a>
             </li>
             <li>
-              <a href="">
-                <span><i class="las la-folder-open"></i></span>
+              <a href="#content-records" title="Records">
+                <span class="las la-folder-open"></span>
                 <small>Records</small>
               </a>
             </li>
@@ -95,14 +97,13 @@
           </div>
         </div>
       </header>
-
+      <!------- content in each tab ------->
       <main>
-        <div class="page-header">
-          <h1>Dashboard</h1>
-          <small>Home / Dashboard</small>
-        </div>
-
-        <div class="page-content">
+        <div class="page-content content-section" id="content-dashboard">
+          <div class="page-header">
+            <h1>Dashboard</h1>
+            <small>Home / Dashboard</small>
+          </div>
           <div class="analytics">
             <div class="card">
               <div class="card-head">
@@ -289,7 +290,228 @@
             </div>
           </div>
         </div>
+
+        <div id="content-profile" class="content-section" style="display: none">
+          <div class="page-header">
+            <h1>Dashboard</h1>
+            <small>Home / Profile</small>
+          </div>
+          <h1>profile</h1>
+        </div>
+
+        <div id="content-mailbox" class="content-section" style="display: none">
+          <div class="page-header">
+            <h1>Mailbox</h1>
+            <small>Home / Mailbox</small>
+          </div>
+          <h1>Mailbox</h1>
+        </div>
+
+        <div id="content-request" class="content-section" style="display: none">
+          <div class="page-header">
+            <h1>Requests</h1>
+            <small>Home / Request</small>
+          </div>
+
+          <div class="records table-responsive">
+            <div class="record-header">
+              <div class="add">
+                <span>Entries</span>
+                <select name="" id="">
+                  <option value="">ID</option>
+                </select>
+                <button>Add record</button>
+              </div>
+
+              <div class="browse">
+                <input type="search" placeholder="Search" class="record-search" />
+                <select name="" id="">
+                  <option value="">Status</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <table width="100%">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th><span class="las la-sort"></span> USERS</th>
+                    <th><span class="las la-sort"></span> PURPOSE</th>
+                    <th><span class="las la-sort"></span> DATE FILED</th>
+                    <th><span class="las la-sort"></span> PAYMENT STATUS</th>
+                    <th><span class="las la-sort"></span> ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#5033</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                        <div class="client-info">
+                          <h4>Andrew Bruno</h4>
+                          <small>Joel@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Business</td>
+                    <td>19 April, 2022</td>
+                    <td>
+                      <span class="no">Not Paid</span>
+                    </td>
+                    <td>
+                      <div class="actions">
+                        <div class="icon-container">
+                          <i class="bi bi-printer"></i>
+                          <div class="tooltip">print</div>
+                        </div>
+                        <div class="icon-container">
+                          <i class="bi bi-trash3"></i>
+                          <div class="tooltip">remove</div>
+                        </div>
+                        <div class="icon-container menu-trigger">
+                          <span class="las la-ellipsis-v"></span>
+                          <ul class="dropdown-menu">
+                            <li>Print</li>
+                            <li>Remove</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#5033</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
+                        <div class="client-info">
+                          <h4>Exty Bruno</h4>
+                          <small>Joel@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Loan</td>
+                    <td>19 April, 2022</td>
+                    <td>
+                      <span class="yes">Paid</span>
+                    </td>
+                    <td>
+                      <div class="actions">
+                        <div class="icon-container">
+                          <i class="bi bi-printer"></i>
+                          <div class="tooltip">print</div>
+                        </div>
+                        <div class="icon-container">
+                          <i class="bi bi-trash3"></i>
+                          <div class="tooltip">remove</div>
+                        </div>
+                        <div class="icon-container menu-trigger">
+                          <span class="las la-ellipsis-v"></span>
+                          <ul class="dropdown-menu">
+                            <li>Print</li>
+                            <li>Remove</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#5033</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
+                        <div class="client-info">
+                          <h4>Exty Bruno</h4>
+                          <small>Joel@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Business</td>
+                    <td>19 April, 2022</td>
+                    <td>
+                      <span class="no">Not Paid</span>
+                    </td>
+                    <td>
+                      <div class="actions">
+                        <div class="icon-container">
+                          <i class="bi bi-printer"></i>
+                          <div class="tooltip">print</div>
+                        </div>
+                        <div class="icon-container">
+                          <i class="bi bi-trash3"></i>
+                          <div class="tooltip">remove</div>
+                        </div>
+                        <div class="icon-container menu-trigger">
+                          <span class="las la-ellipsis-v"></span>
+                          <ul class="dropdown-menu">
+                            <li>Print</li>
+                            <li>Remove</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>#5033</td>
+                    <td>
+                      <div class="client">
+                        <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                        <div class="client-info">
+                          <h4>Andrew Bruno</h4>
+                          <small>Joel@gmail.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Loan</td>
+                    <td>19 April, 2022</td>
+                    <td>
+                      <span class="no">Not Paid</span>
+                    </td>
+                    <td>
+                      <div class="actions">
+                        <div class="icon-container">
+                          <i class="bi bi-printer"></i>
+                          <div class="tooltip">print</div>
+                        </div>
+                        <div class="icon-container">
+                          <i class="bi bi-trash3"></i>
+                          <div class="tooltip">remove</div>
+                        </div>
+                        <div class="icon-container menu-trigger">
+                          <span class="las la-ellipsis-v"></span>
+                          <ul class="dropdown-menu">
+                            <li>Print</li>
+                            <li>Remove</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-validate" class="content-section" style="display: none">
+          <div class="page-header">
+            <h1>Validate</h1>
+            <small>Home / Validate</small>
+          </div>
+          <h1>validate</h1>
+        </div>
+
+        <div id="content-records" class="content-section" style="display: none">
+          <div class="page-header">
+            <h1>Records</h1>
+            <small>Home / Records</small>
+          </div>
+          <h1>Records</h1>
+        </div>
       </main>
     </div>
+    <script src="script.js"></script>
+    <script src="requestScript.js"></script>
   </body>
 </html>
