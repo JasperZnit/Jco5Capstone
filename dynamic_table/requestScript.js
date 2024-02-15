@@ -17,21 +17,3 @@ document.addEventListener("click", (event) => {
     openMenus.forEach((menu) => menu.classList.remove("show"));
   }
 });
-
-const searchInput = document.querySelector(".record-search");
-const recordTableBody = document.getElementById("recordTableBody");
-
-searchInput.addEventListener("input", () => {
-  const searchTerm = searchInput.value.toLowerCase(); // Get search term and normalize
-  const tableRows = recordTableBody.querySelectorAll("tr");
-
-  tableRows.forEach((row) => {
-    const rowData = row.textContent.toLowerCase(); // Get all text inside the row
-
-    if (rowData.includes(searchTerm)) {
-      row.style.display = ""; // Show matching rows
-    } else {
-      row.style.display = "none"; // Hide non-matching rows
-    }
-  });
-});

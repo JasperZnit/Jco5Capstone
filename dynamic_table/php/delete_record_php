@@ -1,0 +1,36 @@
+<?php
+// Database Connection Details (update with your credentials)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "capdb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get the 'id' of the record to delete (SAFELY!)
+if (isset($_POST['record_id'])) {
+    $recordId = intval($_POST['record_id']);
+
+    $sql = "DELETE FROM user_records WHERE id = ?"; 
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $recordId); 
+
+    if ($stmt->execute()) {
+        echo "success"; 
+    } else {
+        echo "error"; // Use specific error messages (e.g., $conn->error) in production
+    }
+
+    $stmt->close();
+} else {
+    echo "error"; 
+}
+
+$conn->close(); 
+?>

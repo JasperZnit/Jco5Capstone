@@ -1,5 +1,5 @@
 // Select all the side menu items
-const menuItems = document.querySelectorAll(".side-menu ul li a");
+const menuItems = document.querySelectorAll(".side-content .side-menu ul li a");
 
 // Initially hide all content sections, except for the first one
 const contentSections = document.querySelectorAll(".content-section");
@@ -11,6 +11,12 @@ document.getElementById("content-dashboard").style.display = "block"; // Show Da
 // Add click event listeners to each menu item
 menuItems.forEach((item) => {
   item.addEventListener("click", function (event) {
+    // Remove 'highlighted' class from all menu items
+    menuItems.forEach((item) => item.classList.remove("highlighted"));
+
+    // Add 'highlighted' class to the currently clicked item
+    this.classList.add("highlighted");
+
     // Hide all the content sections
     contentSections.forEach((section) => {
       section.style.display = "none";

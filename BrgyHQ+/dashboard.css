@@ -15,6 +15,13 @@
   font-family: "Merriweather", sans-serif;
 }
 
+.side-content .side-menu ul li a.highlighted,
+.side-content .side-menu ul li a.highlighted span,
+.side-content .side-menu ul li a.highlighted small {
+  color: #fff;
+  background: #2b384e; /* Or your preferred color */
+}
+
 #menu-toggle {
   display: none;
 }
@@ -112,10 +119,6 @@
   font-weight: 600;
 }
 
-.sidebar {
-  /*overflow-y: auto;*/
-}
-
 .side-menu ul {
   text-align: center;
 }
@@ -123,15 +126,6 @@
 .side-menu a {
   display: block;
   padding: 1.2rem 0rem;
-}
-
-.side-menu a.active {
-  background: #2b384e;
-}
-
-.side-menu a.active span,
-.side-menu a.active small {
-  color: #fff;
 }
 
 .side-menu a span {

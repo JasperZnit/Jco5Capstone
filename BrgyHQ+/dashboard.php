@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="requestStyle.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
   </head>
@@ -26,7 +26,7 @@
         <div class="side-menu">
           <ul>
             <li>
-              <a href="#content-dashboard" class="active" title="Dashboard">
+              <a href="#content-dashboard" title="Dashboard">
                 <span class="las la-home"></span>
                 <small>Dashboard</small>
               </a>
@@ -343,152 +343,7 @@
                     <th><span class="las la-sort"></span> ACTIONS</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Andrew Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Business</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="no">Not Paid</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <div class="icon-container">
-                          <i class="bi bi-printer"></i>
-                          <div class="tooltip">print</div>
-                        </div>
-                        <div class="icon-container">
-                          <i class="bi bi-trash3"></i>
-                          <div class="tooltip">remove</div>
-                        </div>
-                        <div class="icon-container menu-trigger">
-                          <span class="las la-ellipsis-v"></span>
-                          <ul class="dropdown-menu">
-                            <li>Print</li>
-                            <li>Remove</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Exty Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Loan</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="yes">Paid</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <div class="icon-container">
-                          <i class="bi bi-printer"></i>
-                          <div class="tooltip">print</div>
-                        </div>
-                        <div class="icon-container">
-                          <i class="bi bi-trash3"></i>
-                          <div class="tooltip">remove</div>
-                        </div>
-                        <div class="icon-container menu-trigger">
-                          <span class="las la-ellipsis-v"></span>
-                          <ul class="dropdown-menu">
-                            <li>Print</li>
-                            <li>Remove</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Exty Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Business</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="no">Not Paid</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <div class="icon-container">
-                          <i class="bi bi-printer"></i>
-                          <div class="tooltip">print</div>
-                        </div>
-                        <div class="icon-container">
-                          <i class="bi bi-trash3"></i>
-                          <div class="tooltip">remove</div>
-                        </div>
-                        <div class="icon-container menu-trigger">
-                          <span class="las la-ellipsis-v"></span>
-                          <ul class="dropdown-menu">
-                            <li>Print</li>
-                            <li>Remove</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Andrew Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Loan</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="no">Not Paid</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <div class="icon-container">
-                          <i class="bi bi-printer"></i>
-                          <div class="tooltip">print</div>
-                        </div>
-                        <div class="icon-container">
-                          <i class="bi bi-trash3"></i>
-                          <div class="tooltip">remove</div>
-                        </div>
-                        <div class="icon-container menu-trigger">
-                          <span class="las la-ellipsis-v"></span>
-                          <ul class="dropdown-menu">
-                            <li>Print</li>
-                            <li>Remove</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
+                <tbody id="requestTableBody"></tbody>
               </table>
             </div>
           </div>
@@ -511,7 +366,9 @@
         </div>
       </main>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="scriptReq.js"></script>
     <script src="script.js"></script>
-    <script src="requestScript.js"></script>
   </body>
 </html>
