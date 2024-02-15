@@ -57,12 +57,13 @@
                                             <option value="11">SSS ID Application</option>
                                             <option value="12">Vehicle Registration</option>
                                             <option value="13">Voter Registration</option>
-                                            <option value="13">Other</option>                        
+                                            <option value="14">Other</option>                        
                                         </select>
                                         
+                                        <div class="other" style="display: none;">
                                         <label class="mt-4" for="other">Other</label>
                                         <input class="form-control" type="text" id="other_purpose" name="other_purpose" placeholder="Specify other purpose">
-
+                                        </div>
                                         <div class="button-row d-flex mt-4">
                                             <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
                                         </div>
@@ -210,7 +211,8 @@
         </div>        
     </div>
 
-<script  src="js/function.js"></script>
+<script src="./js/script.js"></script>
+<script  src="./js/function.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
