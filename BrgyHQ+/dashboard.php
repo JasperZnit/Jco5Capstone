@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="requestStyle.css" />
-    <link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="dashboard.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
   </head>
@@ -13,7 +13,9 @@
     <input type="checkbox" id="menu-toggle" />
     <div class="sidebar">
       <div class="side-header">
-        <h3>BRGY<span>HQ+</span></h3>
+        <a href="dashboard.php"
+          ><h3>BRGY<span>HQ+</span></h3></a
+        >
       </div>
 
       <div class="side-content">
@@ -26,7 +28,7 @@
         <div class="side-menu">
           <ul>
             <li>
-              <a href="#content-dashboard" title="Dashboard">
+              <a href="dashboard.php" title="Dashboard">
                 <span class="las la-home"></span>
                 <small>Dashboard</small>
               </a>
@@ -80,7 +82,7 @@
 
             <div class="notify-icon">
               <span class="las la-envelope"></span>
-              <span class="notify">4</span>
+              <span class="notify">7</span>
             </div>
 
             <div class="notify-icon">
@@ -107,13 +109,13 @@
           <div class="analytics">
             <div class="card">
               <div class="card-head">
-                <h2>576</h2>
+                <h2><?php include 'php/count_user.php'; echo $totalUsers; ?></h2>
                 <span class="las la-user-friends"></span>
               </div>
               <div class="card-progress">
                 <small>Over all users</small>
                 <div class="card-indicator">
-                  <div class="indicator one" style="width: 60%"></div>
+                  <div class="indicator one" style="width: <?php echo $percentage; ?>%"></div>
                 </div>
               </div>
             </div>
@@ -126,7 +128,7 @@
               <div class="card-progress">
                 <small>Certificate Request</small>
                 <div class="card-indicator">
-                  <div class="indicator two" style="width: 80%"></div>
+                  <div class="indicator two" style="width: 1%"></div>
                 </div>
               </div>
             </div>

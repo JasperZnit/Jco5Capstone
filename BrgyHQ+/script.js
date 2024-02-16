@@ -1,3 +1,5 @@
+//Functionality for changing style (display blocked/none)
+
 // Select all the side menu items
 const menuItems = document.querySelectorAll(".side-content .side-menu ul li a");
 

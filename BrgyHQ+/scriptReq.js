@@ -1,3 +1,5 @@
+//Funtionality for the request dynamic table.
+
 function addRow(id, clientName, email, purpose, date, paymentStatus) {
   let requestTableBody = document.getElementById("requestTableBody");
 
@@ -83,7 +85,7 @@ function deleteItem(recordId) {
   if (confirm("Are you sure you want to delete this user?")) {
     console.log("Preparing to delete record:", recordId); // Debugging check
     $.ajax({
-      url: "delete_user.php",
+      url: "php/delete_user.php",
       method: "POST",
       data: { id: recordId },
       success: function (response) {
