@@ -31,3 +31,34 @@ menuItems.forEach((item) => {
     document.getElementById(contentId).style.display = "block";
   });
 });
+
+//toggle for menu added by joshua
+const MessageMenu = document.getElementById("MessageMenu");
+const NotifMenu = document.getElementById("NotifMenu");
+const ProfMenu = document.getElementById("ProfMenu");
+
+function toggleMenu(menuId) {
+  if (menuId === "MessageMenu") {
+    MessageMenu.classList.toggle("open-menu");
+    NotifMenu.classList.remove("open-menu");
+    ProfMenu.classList.remove("open-menu");
+  } else if (menuId === "NotifMenu") {
+    NotifMenu.classList.toggle("open-menu");
+    MessageMenu.classList.remove("open-menu");
+    ProfMenu.classList.remove("open-menu");
+  } else if (menuId === "ProfMenu") {
+    ProfMenu.classList.toggle("open-menu");
+    MessageMenu.classList.remove("open-menu");
+    NotifMenu.classList.remove("open-menu");
+  }
+}
+
+// Close menus when clicking outside
+document.addEventListener("click", function (event) {
+  // If the click target is NOT one of the menus or their trigger elements...
+  if (!event.target.closest(".mini-menu-wrap, .notify-icon, .bg-img")) {
+    MessageMenu.classList.remove("open-menu");
+    NotifMenu.classList.remove("open-menu");
+    ProfMenu.classList.remove("open-menu");
+  }
+});
