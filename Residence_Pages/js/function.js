@@ -94,13 +94,23 @@ DOMstrings.stepsBar.addEventListener("click", (e) => {
 DOMstrings.stepsForm.addEventListener("click", (e) => {
   const eventTarget = e.target;
 
-  if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`))) {
+  if (
+    !(
+      eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) ||
+      eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)
+    )
+  ) {
     return;
   }
 
-  const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
+  const activePanel = findParent(
+    eventTarget,
+    `${DOMstrings.stepFormPanelClass}`
+  );
 
-  let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
+  let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(
+    activePanel
+  );
 
   if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
     activePanelNum--;
@@ -116,11 +126,11 @@ window.addEventListener("load", setFormHeight, false);
 
 window.addEventListener("resize", setFormHeight, false);
 
-const setAnimationType = (newType) => {
+function setAnimationType(newType) {
   DOMstrings.stepFormPanels.forEach((elem) => {
     elem.dataset.animation = newType;
   });
-};
+}
 
 //changing animation
 const animationSelect = document.querySelector(".pick-animation__select");
@@ -131,59 +141,35 @@ animationSelect.addEventListener("change", () => {
   setAnimationType(newAnimationType);
 });
 
+//start function for other_purpose //
+document.addEventListener("DOMContentLoaded", function () {
+  const selectElement = document.querySelector(".form-select");
+  const otherDiv = document.querySelector(".other");
+
+  selectElement.addEventListener("change", function () {
+    if (this.value === "14") {
+      // Check if the value is "14" (Other) if true
+      otherDiv.style.display = "block";
+    } else {
+      // if false
+      otherDiv.style.display = "none";
+    }
+  });
+});
+//end function for other_purpose //
+
+//start printableArea//
+function printDiv(divName) {
+  var printContents = document.getElementById(divName).innerHTML;
+  var originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = printContents;
+
+  window.print();
+
+  document.body.innerHTML = originalContents;
+}
+
+//end printableArea//
+
 // End (Multi-steps-form) //
-
-//start (download summary) //
-
-// Get the form element
-const form = document.getElementById("summary");
-
-// Create a new jsPDF instance
-const pdf = new jsPDF("p", "mm", "a4");
-
-// Set up the PDF layout
-pdf.setFontSize(12);
-pdf.setTextColor("#000000");
-pdf.setFontStyle("normal");
-
-// Add a page to the PDF
-pdf.addPage();
-
-// Get the form fields and add them to the PDF
-const fields = form.querySelectorAll("input, select");
-fields.forEach((field) => {
-  const fieldName = field.name;
-  const fieldValue = field.value;
-  pdf.text(fieldName + ":", 10, 20);
-  pdf.text(fieldValue, 60, 20);
-  pdf.line(10, 22, 190, 22);
-  pdf.text("", 10, 30);
-});
-
-// Add a download button to the page
-const downloadBtn = document.getElementById("downloadBtn");
-downloadBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  // Save the PDF file
-  pdf.save("summary.pdf");
-});
-
-//end (download summary)//
-
-//start (print summary) //
-document.getElementById("printBtn").addEventListener("click", function () {
-  const printArea = document.getElementById("printableArea");
-  const printContent = printArea.innerHTML;
-  const printWindow = window.open("", "", "height=600,width=800");
-  printWindow.document.write("<html><head><title>Print</title>");
-  printWindow.document.write("</head><body >");
-  printWindow.document.write(printContent);
-  printWindow.document.write("</body></html>");
-  printWindow.document.close();
-  printWindow.focus();
-  printWindow.print();
-  printWindow.close();
-});
-//end (print summary) //
-
-// Funtionality for other options //

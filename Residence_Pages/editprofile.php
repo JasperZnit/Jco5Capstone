@@ -9,10 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);">
 
     <div class="container light-style flex-grow-1 container-p-y mt-5">
-        <h4 class="font-weight-bold py- mb-4">
+        <h4 class="font-weight-bold text-white mb-4">
             Account settings
         </h4>
         <div class="card overflow-hidden">
@@ -56,7 +56,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" /> <!--insert value="<(--remove me--)?php echo $_SESSION['email']; ?>"-->
+                                    <input type="text" class="form-control mb-1" />
+                                    <!--insert value="<(--remove me--)?php echo $_SESSION['email']; ?>"-->
                                     <div class="alert alert-warning mt-3">
                                         Your email is not confirmed. Please check your inbox.<br>
                                         <a href="javascript:void(0)">Resend confirmation</a>
@@ -80,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="tab-pane fade" id="account-social-links">
                             <div class="card-body pb-2">
                                 <div class="form-group">
@@ -105,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="tab-pane fade" id="account-notifications">
                             <div class="card-body pb-2">
                                 <h6 class="mb-4">Activity</h6>
@@ -116,7 +117,8 @@
                                             <span class="switcher-yes"></span>
                                             <span class="switcher-no"></span>
                                         </span>
-                                        <span class="switcher-label">Email me when there is an update to the validation status</span>
+                                        <span class="switcher-label">Email me when there is an update to the validation
+                                            status</span>
                                     </label>
                                 </div>
                                 <div class="form-group">
@@ -126,7 +128,8 @@
                                             <span class="switcher-yes"></span>
                                             <span class="switcher-no"></span>
                                         </span>
-                                        <span class="switcher-label">Email me when my appointment schedule is near.</span>
+                                        <span class="switcher-label">Email me when my appointment schedule is
+                                            near.</span>
                                     </label>
                                 </div>
                                 <div class="form-group">
@@ -136,7 +139,8 @@
                                             <span class="switcher-yes"></span>
                                             <span class="switcher-no"></span>
                                         </span>
-                                        <span class="switcher-label">Email me when my requested certificate is ready.</span>
+                                        <span class="switcher-label">Email me when my requested certificate is
+                                            ready.</span>
                                     </label>
                                 </div>
                             </div>
@@ -180,8 +184,9 @@
             </div>
         </div>
         <div class="text-right mt-3">
-            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-            <button type="button" class="btn btn-default">Cancel</button>
+            <button type="button" class="btn" style="background-color: #37b5b6; color: #f2f597">
+                Save changes</button>&nbsp;
+            <button type="button" class="btn btn-secondary">Cancel</button>
         </div>
     </div>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
