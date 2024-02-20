@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  min-height: 150vh;
+  font-family: "Jost", sans-serif;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.title {
+  color: #ece6e6;
+  font-family: "Jost", sans-serif;
+  font-size: larger;
+}
+
+.form-control {
+  height: 48px;
+}
+#loginFrame {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+#login {
+  cursor: pointer;
+}
+.levelUp {
+  z-index: 9;
+  transform: translateX(32px) translateY(32px);
+  transition: all 300ms linear;
+}
+.levelDown {
+  z-index: 8;
+  transform: translateX(-32px) translateY(-32px);
+  transition: all 300ms linear;
+}
+
+#signup {
+  width: 100%;
+  position: absolute;
+}
+
+#signupbtn {
+  background-color: #492e87;
+  color: #fff;
+  font-weight: bolder;
+}
+#signupbtn:hover {
+  background-color: #6743bb;
+}
+
+#loginbtn {
+  background-color: #37b5b6;
+  color: #fff;
+  font-weight: bolder;
+}
+#loginbtn:hover {
+  background-color: #299393;
+}
+
+.levelDown:after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+}
+
+.levelDown:hover:after {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#password {
+  display: inline-block;
+  position: relative;
+  border: 0;
+}
+
+.password-container {
+  align-items: center;
+  display: flex;
+}
+
+.password-container input {
+  outline: none;
+  border: 0;
+}
+
+.password-container i {
+  align-items: center;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+  div.title {
+    display: none;
+  }
+}
+
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 768px) {
+  div.title {
+    display: none;
+  }
+}
