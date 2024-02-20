@@ -1,0 +1,35 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  width: 700px; /* Adjust the width if needed */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 25px;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+hr {
+  border-color: #000;
+}
+
+p {
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.signature-area {
+  text-align: right; /* Align signature to the right */
+  margin-top: 30px;
+}
