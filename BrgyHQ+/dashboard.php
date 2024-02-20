@@ -76,10 +76,7 @@
           </label>
 
           <div class="header-menu">
-            <input type="text" class="search-box" placeholder="Search..." />
-            <label for="">
-              <span class="las la-search"></span>
-            </label>
+            
 
             <div class="notify-icon">
               <span class="las la-envelope" onclick="toggleMenu('MessageMenu')"></span>
@@ -114,8 +111,6 @@
             <div class="user">
               <div class="bg-img" style="background-image: url(img/1.jpeg)" onclick="toggleMenu('ProfMenu')"></div>
 
-              <span class="las la-power-off"></span>
-              <span>Logout</span>
             </div>
             <div class="mini-menu-wrap" id="ProfMenu">
               <div class="mini-menu">
