@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta char="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #fafafa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container{
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .profile-picture{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        h5{
+            margin-top: 0;
+        }
+
+        .form-field{
+            margin-bottom: 20px;
+            text-align: start;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        select{
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+  
+        .form-field input[type="text"],
+        .form-field input[type="email"],
+        .form-field input[type="password"],
+        .form-field input[type="tel"],
+        .form-field select{
+            border-color: #f1f5f1;
+        }
+
+        .form-field input[type="text"]:focus,
+        .form-field input[type="email"]:focus,
+        .form-field input[type="password"]:focus,
+        .form-field input[type="tel"]:focus,
+        .form-field select:focus{
+            box-shadow: 0 0 3px 0 #e2e7e3;
+        }
+
+        .profile-picture:hover{
+            filter: brightness(110%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="user.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture-input">
+        <input type="file" id="profile-picture-file" style="display: none;">
+        <h5>System Profile</h5>
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Joshua">
+            </div>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="abcd@gmail.com">
+            </div>
+            <div class="form-field">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" placeholder="0912345678">
+            </div>
+    </div>
+    <script>
+        document.getElementById('profile-picture-input').addEventListener('click', function() {
+          document.getElementById('profile-picture-file').click();
+        });
+        
+        document.getElementById('profile-picture-file').addEventListener('change', function() {
+          var file = this.files[0];
+          var reader = new FileReader();
+        
+          reader.onload = function(event) {
+            document.getElementById('profile-picture-input').src = event.target.result;
+          };
+        
+          reader.readAsDataURL(file);
+        });
+        </script>
+</body>
+</html>
