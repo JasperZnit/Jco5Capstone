@@ -1,6 +1,6 @@
 //Funtionality for the request dynamic table.
 
-function addRow(id, clientName, email, purpose, date, paymentStatus) {
+function addRow(id, clientName, email, purpose, date, paymentStatus, address) {
   let requestTableBody = document.getElementById("requestTableBody");
 
   let newRow = `
@@ -25,10 +25,14 @@ function addRow(id, clientName, email, purpose, date, paymentStatus) {
               </td>
               <td>
                 <div class="actions">
-                  <div class="icon-container">
-                    <i class="bi bi-printer"></i>
-                    <div class="tooltip">print</div>
-                  </div>
+                <div class="icon-container print-link" 
+                data-user-id="${id}" 
+                data-name="${clientName}" 
+                data-address="${address}"
+                data-purpose="${purpose}"> 
+             <i class="bi bi-printer"></i>
+             <div class="tooltip">print</div>
+           </div>
                   <div class="icon-container">
                     <i class="bi bi-trash3"></i>
                     <div class="tooltip">remove</div>
@@ -46,7 +50,7 @@ function fetchUserData() {
     .then((response) => response.json())
     .then((users) => {
       users.forEach((user) => {
-        addRow(user.id, user.client_name, user.email, user.purpose, user.date, user.payment_status);
+        addRow(user.id, user.client_name, user.email, user.purpose, user.date, user.payment_status, user.address);
       });
 
       // Event listener for status changes
@@ -102,5 +106,24 @@ function deleteItem(recordId) {
   }
 }
 
+$("#requestTableBody").on("click", ".print-link", function () {
+  const userId = $(this).data("userId");
+  const name = $(this).data("name");
+  const address = $(this).data("address");
+  const purpose = $(this).data("purpose");
+
+  const url =
+    "barangayClearance/barangay_clearance.php?" +
+    "userId=" +
+    userId +
+    "&name=" +
+    encodeURIComponent(name) +
+    "&address=" +
+    encodeURIComponent(address) +
+    "&purpose=" +
+    encodeURIComponent(purpose);
+
+  window.location.href = url;
+});
 // Initial data load on page load
 fetchUserData();

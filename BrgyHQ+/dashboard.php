@@ -6,6 +6,7 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="requestStyle.css" />
     <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="profileTab.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
   </head>
@@ -171,7 +172,7 @@
             <div class="card">
               <div class="card-head">
                 <h2>200</h2>
-                <span><i class="las la-id-card"></i></span>
+                <span><i class="validCard las la-id-card"></i></span>
               </div>
               <div class="card-progress">
                 <small>Validated users</small>
@@ -194,138 +195,6 @@
               </div>
             </div>
           </div>
-
-          <div class="records table-responsive">
-            <div class="record-header">
-              <div class="add">
-                <span>Entries</span>
-                <select name="" id="">
-                  <option value="">ID</option>
-                </select>
-                <button>Add record</button>
-              </div>
-
-              <div class="browse">
-                <input type="search" placeholder="Search" class="record-search" />
-                <select name="" id="">
-                  <option value="">Status</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <table width="100%">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th><span class="las la-sort"></span> USERS</th>
-                    <th><span class="las la-sort"></span> BARANGAY</th>
-                    <th><span class="las la-sort"></span> REGISTRATION DATE</th>
-                    <th><span class="las la-sort"></span> STATUS</th>
-                    <th><span class="las la-sort"></span> ACTIONS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Andrew Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Poblacion</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="no">Not Validated</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <span class="lab la-telegram-plane"></span>
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Exty Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Poblacion</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="yes">Validated</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <span class="lab la-telegram-plane"></span>
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Exty Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Poblacion</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="no">Not Validated</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <span class="lab la-telegram-plane"></span>
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#5033</td>
-                    <td>
-                      <div class="client">
-                        <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
-                        <div class="client-info">
-                          <h4>Andrew Bruno</h4>
-                          <small>Joel@gmail.com</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Poblacion</td>
-                    <td>19 April, 2022</td>
-                    <td>
-                      <span class="no">Not Validated</span>
-                    </td>
-                    <td>
-                      <div class="actions">
-                        <span class="lab la-telegram-plane"></span>
-                        <span class="las la-eye"></span>
-                        <span class="las la-ellipsis-v"></span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
 
         <div id="content-profile" class="content-section" style="display: none">
@@ -333,7 +202,31 @@
             <h1>Dashboard</h1>
             <small>Home / Profile</small>
           </div>
-          <h1>profile</h1>
+          <div class="profile-container">
+        <img src="user.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture-input">
+        <input type="file" id="profile-picture-file" style="display: none;">
+        <h5>System Profile</h5>
+            <div class="profile-form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Barangay Kimolong">
+            </div>
+            <div class="profile-form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Kimolong@gmail.com">
+            </div>
+            <div class="profile-form-field">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="profile-form-field">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" placeholder="0912345678">
+            </div>
+    </div>
         </div>
 
         <div id="content-mailbox" class="content-section" style="display: none">
@@ -405,7 +298,9 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
     <script src="scriptReq.js"></script>
     <script src="script.js"></script>
+    <script src="profileTabScript.js"></script>
   </body>
 </html>
