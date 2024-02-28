@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function generateRandomNumber(maxDigits) {
+            const maxNumber = Math.pow(10, maxDigits) - 1;
+            return Math.floor(Math.random() * (maxNumber + 1));
+        }
+
+        function generateRandomNumberButtonClick() {
+            const randomNumber = generateRandomNumber(10);
+            document.getElementById('randomNumber').textContent = randomNumber;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="generateRandomNumberButtonClick()">Generate Random Number</button>
+    <p id="randomNumber"></p>
+</body>
+</html>
