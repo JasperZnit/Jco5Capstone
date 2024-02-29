@@ -120,13 +120,13 @@
                 </div>
                 <hr />
                 <a href="#" class="mini-menu-link">
-                  <img src="img/profile.png" />
+                <i class="bi bi-pencil-square"></i>
                   <p>Edit Profile</p>
                   <span> </span>
                 </a>
 
                 <a href="#" class="mini-menu-link">
-                  <img src="img/logout.png" />
+                <i class="bi bi-box-arrow-left"></i>
                   <p>Logout</p>
                   <span> </span>
                 </a>
@@ -158,39 +158,39 @@
 
             <div class="card">
               <div class="card-head">
-                <h2>35</h2>
+              <h2><?php include 'php/count_request.php'; echo $totalUsers; ?></h2>
                 <span class="las la-scroll"></span>
               </div>
               <div class="card-progress">
                 <small>Certificate Request</small>
                 <div class="card-indicator">
-                  <div class="indicator two" style="width: 1%"></div>
+                <div class="indicator one" style="width: <?php echo $requestPercentage; ?>%"></div>
                 </div>
               </div>
             </div>
 
             <div class="card">
               <div class="card-head">
-                <h2>200</h2>
+              <h2><?php include 'php/count_validated_users.php'; echo $totalValidatedUsers; ?></h2>
                 <span><i class="validCard las la-id-card"></i></span>
               </div>
               <div class="card-progress">
                 <small>Validated users</small>
                 <div class="card-indicator">
-                  <div class="indicator three" style="width: 65%"></div>
+                <div class="indicator one" style="width: <?php echo $validatedPercentage; ?>%"></div>
                 </div>
               </div>
             </div>
 
             <div class="card">
               <div class="card-head">
-                <h2>120</h2>
+              <h2><?php include 'php/count_email.php'; echo $totalUsers; ?></h2>
                 <span class="las la-envelope"></span>
               </div>
               <div class="card-progress">
                 <small>New E-mails received</small>
                 <div class="card-indicator">
-                  <div class="indicator four" style="width: 90%"></div>
+                <div class="indicator one" style="width: <?php echo $emailPercentage; ?>%"></div>
                 </div>
               </div>
             </div>
