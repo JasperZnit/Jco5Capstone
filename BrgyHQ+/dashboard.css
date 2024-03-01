@@ -668,3 +668,51 @@ table tbody tr {
     margin-left: 10px;
   }
 }
+
+/*Start Profile Styling*/
+#content-profile {
+  margin-top: 20px;
+  background-color: #f2f6fc;
+  color: #69707a;
+}
+
+.img-account-profile {
+  height: 10rem;
+}
+
+.PPcard {
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 3px;
+  height: 350px;
+}
+
+.AcctDet {
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 3px;
+  height: 550px;
+}
+
+.Chpass {
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 3px;
+  height: 400px;
+}
+
+.card .PPheader {
+  font-weight: 500;
+}
+.card-header:first-child {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+.card-header {
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
