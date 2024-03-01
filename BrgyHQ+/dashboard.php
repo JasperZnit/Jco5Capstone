@@ -6,7 +6,7 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="requestStyle.css" />
     <link rel="stylesheet" href="dashboard.css" />
-    <link rel="stylesheet" href="profileTab.css">
+    <link rel="stylesheet" href="profileTab.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
   </head>
@@ -77,8 +77,6 @@
           </label>
 
           <div class="header-menu">
-            
-
             <div class="notify-icon">
               <span class="las la-envelope" onclick="toggleMenu('MessageMenu')"></span>
               <span class="notify">4</span>
@@ -111,7 +109,6 @@
 
             <div class="user">
               <div class="bg-img" style="background-image: url(img/1.jpeg)" onclick="toggleMenu('ProfMenu')"></div>
-
             </div>
             <div class="mini-menu-wrap" id="ProfMenu">
               <div class="mini-menu">
@@ -120,13 +117,13 @@
                 </div>
                 <hr />
                 <a href="#" class="mini-menu-link">
-                <i class="bi bi-pencil-square"></i>
+                  <i class="bi bi-pencil-square"></i>
                   <p>Edit Profile</p>
                   <span> </span>
                 </a>
 
                 <a href="#" class="mini-menu-link">
-                <i class="bi bi-box-arrow-left"></i>
+                  <i class="bi bi-box-arrow-left"></i>
                   <p>Logout</p>
                   <span> </span>
                 </a>
@@ -158,39 +155,39 @@
 
             <div class="card">
               <div class="card-head">
-              <h2><?php include 'php/count_request.php'; echo $totalUsers; ?></h2>
+                <h2><?php include 'php/count_request.php'; echo $totalUsers; ?></h2>
                 <span class="las la-scroll"></span>
               </div>
               <div class="card-progress">
                 <small>Certificate Request</small>
                 <div class="card-indicator">
-                <div class="indicator one" style="width: <?php echo $requestPercentage; ?>%"></div>
+                  <div class="indicator one" style="width: <?php echo $requestPercentage; ?>%"></div>
                 </div>
               </div>
             </div>
 
             <div class="card">
               <div class="card-head">
-              <h2><?php include 'php/count_validated_users.php'; echo $totalValidatedUsers; ?></h2>
+                <h2><?php include 'php/count_validated_users.php'; echo $totalValidatedUsers; ?></h2>
                 <span><i class="validCard las la-id-card"></i></span>
               </div>
               <div class="card-progress">
                 <small>Validated users</small>
                 <div class="card-indicator">
-                <div class="indicator one" style="width: <?php echo $validatedPercentage; ?>%"></div>
+                  <div class="indicator one" style="width: <?php echo $validatedPercentage; ?>%"></div>
                 </div>
               </div>
             </div>
 
             <div class="card">
               <div class="card-head">
-              <h2><?php include 'php/count_email.php'; echo $totalUsers; ?></h2>
+                <h2><?php include 'php/count_email.php'; echo $totalUsers; ?></h2>
                 <span class="las la-envelope"></span>
               </div>
               <div class="card-progress">
                 <small>New E-mails received</small>
                 <div class="card-indicator">
-                <div class="indicator one" style="width: <?php echo $emailPercentage; ?>%"></div>
+                  <div class="indicator one" style="width: <?php echo $emailPercentage; ?>%"></div>
                 </div>
               </div>
             </div>
@@ -203,30 +200,30 @@
             <small>Home / Profile</small>
           </div>
           <div class="profile-container">
-        <img src="user.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture-input">
-        <input type="file" id="profile-picture-file" style="display: none;">
-        <h5>System Profile</h5>
+            <img src="user.jpg" alt="Profile Picture" class="profile-picture" id="profile-picture-input" />
+            <input type="file" id="profile-picture-file" style="display: none" />
+            <h5>System Profile</h5>
             <div class="profile-form-field">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Barangay Kimolong">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Barangay Kimolong" />
             </div>
             <div class="profile-form-field">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Kimolong@gmail.com">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Kimolong@gmail.com" />
             </div>
             <div class="profile-form-field">
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" >
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
             </div>
             <div class="profile-form-field">
-                <label for="contact">Contact Number:</label>
-                <input type="tel" id="contact" name="contact" placeholder="0912345678">
+              <label for="contact">Contact Number:</label>
+              <input type="tel" id="contact" name="contact" placeholder="0912345678" />
             </div>
-    </div>
+          </div>
         </div>
 
         <div id="content-mailbox" class="content-section" style="display: none">
@@ -298,7 +295,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    
+
     <script src="scriptReq.js"></script>
     <script src="script.js"></script>
     <script src="profileTabScript.js"></script>
