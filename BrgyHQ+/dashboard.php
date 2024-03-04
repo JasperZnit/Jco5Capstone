@@ -43,12 +43,6 @@
               </a>
             </li>
             <li>
-              <a href="#content-mailbox" title="Mailbox">
-                <span class="las la-envelope"></span>
-                <small>Mailbox</small>
-              </a>
-            </li>
-            <li>
               <a href="#content-request" title="Request">
                 <span class="las la-scroll"></span>
                 <small>Requests</small>
@@ -58,12 +52,6 @@
               <a href="#content-validate" title="Validate">
                 <span class="las la-id-card"></span>
                 <small>Validate</small>
-              </a>
-            </li>
-            <li>
-              <a href="#content-records" title="Records">
-                <span class="las la-folder-open"></span>
-                <small>Records</small>
               </a>
             </li>
           </ul>
@@ -307,14 +295,6 @@
           </div>
         </div>
 
-        <div id="content-mailbox" class="content-section" style="display: none">
-          <div class="page-header">
-            <h1>Mailbox</h1>
-            <small>Home / Mailbox</small>
-          </div>
-          <h1>Mailbox</h1>
-        </div>
-
         <div id="content-request" class="content-section" style="display: none">
           <div class="page-header">
             <h1>Requests</h1>
@@ -363,14 +343,6 @@
             <small>Home / Validate</small>
           </div>
           <h1>validate</h1>
-        </div>
-
-        <div id="content-records" class="content-section" style="display: none">
-          <div class="page-header">
-            <h1>Records</h1>
-            <small>Home / Records</small>
-          </div>
-          <h1>Records</h1>
         </div>
       </main>
     </div>
