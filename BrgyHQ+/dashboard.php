@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION['user_id']) || !$_SESSION['username']) {
+        header('Location: loginBRGYHQ+/index.php');
+        exit();
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +32,7 @@
       <div class="side-content">
         <div class="profile">
           <div class="profile-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-          <h4>Jasper Senit</h4>
+          <h4>Barangay Kimolong</h4>
           <small>Administrator</small>
         </div>
 
@@ -48,12 +56,6 @@
                 <small>Requests</small>
               </a>
             </li>
-            <li>
-              <a href="#content-validate" title="Validate">
-                <span class="las la-id-card"></span>
-                <small>Validate</small>
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -67,52 +69,16 @@
           </label>
 
           <div class="header-menu">
-            <div class="notify-icon">
-              <span class="las la-envelope" onclick="toggleMenu('MessageMenu')"></span>
-              <span class="notify">4</span>
-              <div class="mini-menu-wrap" id="MessageMenu">
-                <div class="mini-menu">
-                  <div class="">
-                    <h3>Messages</h3>
-                  </div>
-                  <hr />
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-
-            <div class="notify-icon">
-              <span class="las la-bell" onclick="toggleMenu('NotifMenu')"></span>
-              <span class="notify">3</span>
-              <div class="mini-menu-wrap" id="NotifMenu">
-                <div class="mini-menu">
-                  <div class="">
-                    <h3>Notifications</h3>
-                  </div>
-                  <hr />
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-
             <div class="user">
               <div class="bg-img" style="background-image: url(img/1.jpeg)" onclick="toggleMenu('ProfMenu')"></div>
             </div>
             <div class="mini-menu-wrap" id="ProfMenu">
               <div class="mini-menu">
                 <div class="user-info">
-                  <h3>Jasper Senit</h3>
+                  <h3>Barangay Kimolong</h3>
                 </div>
                 <hr />
-                <a href="#" class="mini-menu-link">
-                  <i class="bi bi-pencil-square"></i>
-                  <p>Edit Profile</p>
-                  <span> </span>
-                </a>
-
-                <a href="#" class="mini-menu-link">
+                <a href="loginBRGYHQ+/logout.php" class="mini-menu-link">
                   <i class="bi bi-box-arrow-left"></i>
                   <p>Logout</p>
                   <span> </span>
@@ -195,25 +161,35 @@
               <!-- Account details card-->
               <div class="card AcctDet mb-4">
                 <div class="card-header">Account Details</div>
+                <?php
+            if (isset($_GET['error'])) {
+                // Display error messages
+                if ($_GET['error'] == 'passwordmismatch') {
+                    echo "<p style='color: red;'>Passwords do not match.</p>";
+                 } elseif ($_GET['error'] == 'wrongcurrent') {
+                    echo "<p style='color: red;'>Incorrect current password.</p>";
+                 } // Add more error cases as needed
+            } 
+        ?>
               <!-- Change password card-->
               <div class="card Chpass mb-4">
-                  <form>
+                  <form method="post" action="change_password_process.php">
                       <div class="mb-3">
-                        <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                        <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                        <label class="small mb-1" for="currentPassword">Current Password</label>
+                        <input class="form-control" id="current_password" name="current_password" type="password" placeholder="Enter current password">
                       </div>
                       <!-- Form Group (current password)-->
                       <div class="mb-3">
-                        <label class="small mb-1" for="currentPassword">Current Password</label>
-                        <input class="form-control" id="currentPassword" type="password" placeholder="Enter current password">
+                        <label class="small mb-1" for="currentPassword">New Password</label>
+                        <input class="form-control" id="new_password" name="new_password" type="password" placeholder="new password">
                       </div>
                       <!-- Form Group (new password)-->
                       <div class="mb-3">
-                        <label class="small mb-1" for="newPassword">New Password</label>
-                        <input class="form-control" id="newPassword" type="password" placeholder="Enter new password">
+                        <label class="small mb-1" for="newPassword">Confirm New Password</label>
+                        <input class="form-control" id="confirm_password" name="confirm_password" type="password" placeholder="Confirm new password">
                       </div>
                       <!-- Form Group (confirm password)-->
-                      <button class="btn btn-primary" type="button">Save</button>
+                      <input type="submit" value="Change Password">
                   </form>
                 </div>
               </div>

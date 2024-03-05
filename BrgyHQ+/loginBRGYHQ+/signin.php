@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connect to database
 $conn = mysqli_connect("localhost", "root", "", "admin_login");
 
