@@ -55,145 +55,154 @@
                             <form class="multisteps-form__form" action="multistepsformprocess.php" method="post">
                                 <!--Purpose-->
                                 <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
-                                    style="height: 50vh" data-animation="scaleIn">
+                                    style="height: 60vh" data-animation="scaleIn">
 
                                     <h3 class="multisteps-form__title">Select a purpose</h3>
                                     
                                     <div class="multisteps-form__content">
-                                        <select id="mySelect" class="form-select" name="purpose" onchange="OtherFunction()">
-                                            <option selected>Select a purpose</option>
-                                            <option value="Business Permit">Business Permit</option>
-                                            <option value="Employment Requirements">Employment Requirements</option>
-                                            <option value="Financial Assistance Application">Financial Assistance Application</option>
-                                            <option value="Health Insurance Application">Health Insurance Application</option>
-                                            <option value="PagIBIG ID Application">PagIBIG ID Application</option>
-                                            <option value="PhilHealth ID Application">PhilHealth ID Application</option>
-                                            <option value="Postal ID Application">Postal ID Application</option>
-                                            <option value="Scholarship Application">Scholarship Application</option>
-                                            <option value="School Enrollment Requirement">School Enrollment Requirement</option>
-                                            <option value="SSS ID Application">SSS ID Application</option>
-                                            <option value="Vehicle Registration">Vehicle Registration</option>
-                                            <option value="Voter Registration">Voter Registration</option>
-                                            <option value="Other" id="Other">Other</option>
-                                            
-                                        </select>
-                                        
+                                        <div class="containerpurpose">
+                                            <table>
+                                                <tr>
+                                                    <td><strong>Name</strong></td>
+                                                    <td><input class="input" type="text" name="name" id="name" required/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Email</strong></td>
+                                                    <td><input class="input" type="email" name="email" id="email" required/></td>
+                                                </tr>
 
-                                        <div class="other" style="display: none;" id="demo_other">
-                                            <label class="mt-4" for="other">Other</label>
-                                            <input class="form-control" type="text" id="other_purpose"
-                                                name="other_purpose" placeholder="Specify other purpose">
-                                        </div>
-                                        <script>
-                                            function OtherFunction() {
-                                            var x = document.getElementById("mySelect");
-                                            if(x.value == "Other")  {
-                                             document.getElementById('demo_other').style.display =  'block';
-                                            
-                                            }
-                                            }
-                                        </script>
-                                        <div class="button-row d-flex mt-4">
-                                                    <button class="btn ml-auto js-btn-next"
-                                                        style="background-color: #37b5b6; color: #f2f597" type="button"
-                                                        title="Next">Next</button>
+                                                <tr>
+                                                    <td><strong>Purpose </strong></td>
+                                                    <td>
+                                                        <select id="mySelect" class="form-select" name="purpose" onchange="OtherFunction()">
+                                                            <option selected>Select a purpose</option>
+                                                            <option value="Business Permit">Business Permit</option>
+                                                            <option value="Employment Requirements">Employment Requirements</option>
+                                                            <option value="Financial Assistance Application">Financial Assistance Application</option>
+                                                            <option value="Health Insurance Application">Health Insurance Application</option>
+                                                            <option value="PagIBIG ID Application">PagIBIG ID Application</option>
+                                                            <option value="PhilHealth ID Application">PhilHealth ID Application</option>
+                                                            <option value="Postal ID Application">Postal ID Application</option>
+                                                            <option value="Scholarship Application">Scholarship Application</option>
+                                                            <option value="School Enrollment Requirement">School Enrollment Requirement</option>
+                                                            <option value="SSS ID Application">SSS ID Application</option>
+                                                            <option value="Vehicle Registration">Vehicle Registration</option>
+                                                            <option value="Voter Registration">Voter Registration</option>
+                                                            <option value="Other" id="Other">Other</option>
+                                                            
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>     
+                                                <div class="other" style="display: none;" id="demo_other">
+                                                    <label class="mt-4" for="other"><strong>Other</strong></label>
+                                                    <input class="form-control" type="text" id="other_purpose"
+                                                        name="other_purpose" placeholder="Specify other purpose">
                                                 </div>
-                                            </div>
+                                                <script>
+                                                    function OtherFunction() {
+                                                    var x = document.getElementById("mySelect");
+                                                    if(x.value == "Other")  {
+                                                    document.getElementById('demo_other').style.display =  'block';
+                                                    
+                                                    }
+                                                    }
+                                                </script>
+                                            
                                         </div>
-                                         <!--Appointment-->
-                                        <div class="multisteps-form__panel shadow p-4 rounded bg-white"
-                                            data-animation="scaleIn">
-                                            <h3 class="multisteps-form__title">Schedule an appointment</h3>
-                                            <div class="multisteps-form__content" >
-
-                                                <div class="col">
-                                                    <input type="date" name="appointment_date">
-                                                    <!-- Calendly inline widget begin -->
-                                                    <!-- <div class="calendly-inline-widget"
-                                                        data-url="https://calendly.com/brgyhqplus/brgyhq?hide_event_type_details=1&hide_gdpr_banner=1"
+                                        <div class="button-row d-flex mt-4">
+                                            <button class="btn ml-auto js-btn-next" style="background-color: #37b5b6; color: #f2f597" type="button" title="Next">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Appointment-->
+                                <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                                    <h3 class="multisteps-form__title">Schedule an appointment</h3>
+                                    <div class="multisteps-form__content" >
+                                        <div class="containerappointment">
+                                            <div>
+                                                <h5>Note: Office hours only from <strong>8:00 AM to 5:00 PM, Monday - Friday.</strong></h5>
+                                                <p class="text-danger"><em>(please select weekdays, Saturdays and Sundays requests will not be catered)</em></p>
+                                            </div>
+                                            <input type="datetime-local" name="appointment_date">
+                                                <!-- Calendly inline widget begin -->
+                                                <!-- <div class="calendly-inline-widget"
+                                                    data-url="https://calendly.com/brgyhqplus/brgyhq?hide_event_type_details=1&hide_gdpr_banner=1"
                                                         style="min-width:320px;height:700px;"></div>
                                                     <script type="text/javascript"
                                                         src="https://assets.calendly.com/assets/external/widget.js"
                                                         async></script> -->
-                                                    <!-- Calendly inline widget end -->
-                                                </div>
-                                                
-
-                               
-
+                                                <!-- Calendly inline widget end -->
+                                        </div>
+                                    
                                         <div class="button-row d-flex mt-4">
-                                            <button class="btn btn-primary js-btn-prev" type="button"
-                                                title="Prev">Prev</button>
-                                            <button class="btn ml-auto js-btn-next"
-                                                style="background-color: #37b5b6; color: #f2f597" type="button"
-                                                title="Next">Next</button>
+                                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                                            <button class="btn ml-auto js-btn-next" style="background-color: #37b5b6; color: #f2f597" type="button" title="Next">Next</button>
                                         </div>
                                     </div>
                                 </div>
-
                                 <!--Payment-->
                                 <div class="multisteps-form__panel shadow p-4 rounded bg-white"
                                     data-animation="scaleIn">
                                     <h3 class="multisteps-form__title">Select your payment method</h3>
                                     <div class="multisteps-form__content">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="containerpayment">
-                                                
-                                                    <select name="payment">
-                                                        <option value="3 days to pay">3 days to pay</option>
-                                                        <option value="Cash On Delivery">Cash On Delivery</option>
-                                                        <option value="Deposit To Bank">Deposit To Bank</option>
-                                                        <option value="check on delivery">Check on Delivery</option>
-                                                    </select>
+                                        
+                                        <div class="containerpayment">
+                                            <div>
+                                                <h5>Amount to pay: <strong>Php 75.00</strong></h5>
+                                                <p class="text-danger"><em>(other options will be available soon)</em></p>
                                             </div>
+                                            <select name="payment">
+                                                <option selected>Select one</option>
+                                                <option value="Cash on Pickup">Cash on Pickup</option>
+                                                <option>...</option>
+                                            </select>
                                         </div>
-                                        <div class="row">
-                                            <div class="button-row d-flex mt-4 col-12">
-                                                <button class="btn btn-primary js-btn-prev" type="button"
-                                                    title="Prev">Prev</button>
-                                                <button class="btn ml-auto js-btn-next"
-                                                    style="background-color: #37b5b6; color: #f2f597" type="button"
-                                                    title="Next">Submit</button>
-                                            </div>
+                                    
+                                        
+                                        <div class="button-row d-flex mt-4 col-12">
+                                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                                            <button class="btn ml-auto js-btn-next" style="background-color: #37b5b6; color: #f2f597" type="button" title="Next">Submit</button>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <!--Summary-->
-                                 <div class="multisteps-form__panel shadow p-4 rounded bg-white"
+                                <div class="multisteps-form__panel shadow p-4 rounded bg-white"
                                     data-animation="scaleIn">
 
                                     <div class="multisteps-form__content" id="printableArea">
                                         <h3 class="multisteps-form__title">Transaction Summary</h3>
                                         <div class="form mt-4" id="summary">
                                             <div class="form-group">
-                                                <label>Reference Number:</label>
-                                                <input class="form-control" type="text" name="reference_number"
-                                                    id="referenceNumber" readonly />
+                                                <label>Name:</label>
+                                                <input class="form-control" type="text" 
+                                                    id="name" readonly />
                                             </div>
                                             <div class="form-group">
-                                                <label>Requester:</label>
-                                                <input class="form-control" type="text" name="requester" id="requester"
+                                                <label>Email:</label>
+                                                <input class="form-control" type="text" id="email"
                                                     readonly />
                                             </div>
                                             <div class="form-group">
                                                 <label>Purpose:</label>
-                                                <input class="form-control" type="text" name="purpose" id="purpose"
+                                                <input class="form-control" type="text"  id="purpose"
                                                     readonly />
                                             </div>
                                             <div class="form-group">
                                                 <label>Appointment Date:</label>
-                                                <input class="form-control" type="text" name="appointment_date"
+                                                <input class="form-control" type="text"
                                                     id="appointment" readonly />
                                             </div>
                                             <div class="form-group">
                                                 <label>Payment Method:</label>
-                                                <input class="form-control" type="text" name="method" id="payment"
+                                                <input class="form-control" type="text" id="payment"
                                                     readonly />
                                             </div>
                                             <div class="form-group">
-                                                <label>Amount:</label>
-                                                <input class="form-control" type="text" name="amount" id="amount"
-                                                    readonly />
+                                                <label>Amount to pay:</label>
+                                                <input class="form-control" type="text" id="amount"
+                                                   value="Php 75.00" readonly/>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-end">
