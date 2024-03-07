@@ -125,7 +125,7 @@ body a {
 }
 
 .multisteps-form__content {
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 0 50px 0 50px;
 }
 
@@ -196,9 +196,14 @@ body a {
 
 /*Payment CSS*/
 
-.containerpayment {
-  width: 400px;
+.containerpayment,
+.containerappointment {
+  width: 100%;
   padding: 40px;
+}
+
+.containerpurpose {
+  margin-top: 50px;
 }
 
 .container .title {
@@ -314,4 +319,47 @@ img {
 
 .check i {
   font-size: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 10px;
+  outline: 1px;
+}
+.input {
+  margin: 5px 0;
+  margin-left: 10px;
+}
+
+table {
+  width: 650px;
+  padding: 40px;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+tr {
+  height: 30px;
+  padding: 7px;
+  margin: 10px 0;
+}
+
+select {
+  margin-left: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.other label {
+  width: 650px;
+  margin-left: 20px;
+  display: flex;
+}
+
+.other input {
+  display: inline;
+  width: 540px;
+  margin-left: 140px;
 }
