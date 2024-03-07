@@ -95,8 +95,8 @@
             <h1>Dashboard</h1>
             <small>Home / Dashboard</small>
           </div>
-          <div class="analytics">
-            <div class="card">
+          <div class="analytics d-flex justify-content-center">
+            <div class="card w-50">
               <div class="card-head">
                 <h2><?php include 'php/count_user.php'; echo $totalUsers; ?></h2>
                 <span class="las la-user-friends"></span>
@@ -109,7 +109,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card w-50">
               <div class="card-head">
                 <h2><?php include 'php/count_request.php'; echo $totalUsers; ?></h2>
                 <span class="las la-scroll"></span>
@@ -122,31 +122,6 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-head">
-                <h2><?php include 'php/count_validated_users.php'; echo $totalValidatedUsers; ?></h2>
-                <span><i class="validCard las la-id-card"></i></span>
-              </div>
-              <div class="card-progress">
-                <small>Validated users</small>
-                <div class="card-indicator">
-                  <div class="indicator one" style="width: <?php echo $validatedPercentage; ?>%"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-head">
-                <h2><?php include 'php/count_email.php'; echo $totalUsers; ?></h2>
-                <span class="las la-envelope"></span>
-              </div>
-              <div class="card-progress">
-                <small>New E-mails received</small>
-                <div class="card-indicator">
-                  <div class="indicator one" style="width: <?php echo $emailPercentage; ?>%"></div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -205,22 +180,6 @@
           </div>
 
           <div class="records table-responsive">
-            <div class="record-header">
-              <div class="add">
-                <span>Entries</span>
-                <select name="" id="">
-                  <option value="">ID</option>
-                </select>
-                <button>Add record</button>
-              </div>
-
-              <div class="browse">
-                <input type="search" placeholder="Search" class="record-search" />
-                <select name="" id="">
-                  <option value="">Status</option>
-                </select>
-              </div>
-            </div>
 
             <div>
               <table width="100%">

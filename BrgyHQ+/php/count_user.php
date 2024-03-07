@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "capdb";
+$dbname = "my_project";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // SQL query to count users
-$sql = "SELECT COUNT(*) as total_users FROM user_records";
+$sql = "SELECT COUNT(*) as total_users FROM users";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
