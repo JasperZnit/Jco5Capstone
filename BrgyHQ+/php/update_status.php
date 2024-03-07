@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "capdb";
+$dbname = "my_project";
 
 // Create connection
 $conn = new \mysqli($servername, $username, $password, $dbname);
@@ -18,7 +18,7 @@ $record_id = $_POST['record_id'];
 $status = $_POST['status'];
 
 // Prepare and execute SQL update statement
-$sql = "UPDATE user_records SET payment_status = ? WHERE id = ?";
+$sql = "UPDATE certificate_applications SET payment_status = ? WHERE application_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("si", $status, $record_id);
 

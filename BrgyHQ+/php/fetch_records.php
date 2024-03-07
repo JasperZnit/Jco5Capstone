@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "capdb";
+$dbname = "my_project";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Query Data
-$sql = "SELECT id, client_name, email, purpose, date, payment_status, address FROM user_records"; // Include 'address'
+$sql = "SELECT application_id, name, email, purpose, appointment_datetime, payment_status, payment_method FROM certificate_applications"; // Include 'address'
 $result = $conn->query($sql);
 
 $users = array();

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['id']) || !isset($_SESSION['fullname'])) {
+  // Not logged in, redirect to login page
+  header("Location: index.php"); 
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +80,7 @@
                   <a class="dropdown-item" href="index.php">
                     <div class="flex align-items-center fs-5 px-3">
                       <i class="bi bi-box-arrow-left "></i>
-                      <span class="text-truncate mx-2">Logout</span>
+                      <span class="text-truncate mx-2"><a href="logoutuser.php">Logout</a></span>
                     </div>
                   </a>          
                 </li>

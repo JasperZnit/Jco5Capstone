@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connect to the database
 $servername = "localhost";
 $username = "root";
@@ -29,8 +30,8 @@ try {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
             if (password_verify($password, $user['password'])) {
-                $_SESSION['id'] = $id;
-                $_SESSION['fullname'] = $fullname;
+                $_SESSION['id'] = $user['id']; 
+                $_SESSION['fullname'] = $user['fullname']; 
                 // Handle successful login (e.g., redirect, start session)
                 header("Location: home.php");
                 exit;

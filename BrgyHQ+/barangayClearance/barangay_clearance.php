@@ -23,7 +23,7 @@
       <p>
         This is to certify that <strong><span id="residentName" contenteditable="true">John Doe</span></strong>, 
         of legal age, <span id="civilStatus" contenteditable="true">Single</span>, Filipino, and a
-        resident of <span id="residentAddress" contenteditable="true">Sample Address</span>, is a person of good moral character.
+        resident of Kimolong, Kitaotao, Bukidnon, is a person of good moral character.
       </p>
 
       <p>This clearance is being issued upon the request of the above-named person for the purpose of 

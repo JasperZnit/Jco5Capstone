@@ -31,7 +31,7 @@
 
       <div class="side-content">
         <div class="profile">
-          <div class="profile-img bg-img" style="background-image: url(img/1.jpeg)"></div>
+          <div class="profile-img bg-img" style="background-image: url(img/4.png)"></div>
           <h4>Barangay Kimolong</h4>
           <small>Administrator</small>
         </div>
@@ -70,7 +70,7 @@
 
           <div class="header-menu">
             <div class="user">
-              <div class="bg-img" style="background-image: url(img/1.jpeg)" onclick="toggleMenu('ProfMenu')"></div>
+              <div class="bg-img" style="background-image: url(img/4.png)" onclick="toggleMenu('ProfMenu')"></div>
             </div>
             <div class="mini-menu-wrap" id="ProfMenu">
               <div class="mini-menu">

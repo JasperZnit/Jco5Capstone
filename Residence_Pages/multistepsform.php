@@ -45,14 +45,13 @@
                                     title="Appointment">Appointment</button>
                                 <button class="multisteps-form__progress-btn" type="button"
                                     title="Pament">Payment</button>
-                                <button class="multisteps-form__progress-btn" type="button"
-                                    title="Summary">Summary</button>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 col-lg-8 m-auto">
-                            <form class="multisteps-form__form" action="multistepsformprocess.php" method="post">
+                            <form class="multisteps-form__form" action="cerficate_request.php" method="post">
+                            <input type="hidden" name="step" value="1">
                                 <!--Purpose-->
                                 <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
                                     style="height: 60vh" data-animation="scaleIn">
@@ -124,7 +123,7 @@
                                                 <h5>Note: Office hours only from <strong>8:00 AM to 5:00 PM, Monday - Friday.</strong></h5>
                                                 <p class="text-danger"><em>(please select weekdays, Saturdays and Sundays requests will not be catered)</em></p>
                                             </div>
-                                            <input type="datetime-local" name="appointment_date">
+                                            <input type="datetime-local" name="appointment_datetime">
                                                 <!-- Calendly inline widget begin -->
                                                 <!-- <div class="calendly-inline-widget"
                                                     data-url="https://calendly.com/brgyhqplus/brgyhq?hide_event_type_details=1&hide_gdpr_banner=1"
@@ -162,72 +161,11 @@
                                         
                                         <div class="button-row d-flex mt-4 col-12">
                                             <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                                            <button class="btn ml-auto js-btn-next" style="background-color: #37b5b6; color: #f2f597" type="button" title="Next">Submit</button>
+                                            <button class="btn ml-auto" style="background-color: #37b5b6; color: #f2f597" type="submit">Submit</button>
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <!--Summary-->
-                                <div class="multisteps-form__panel shadow p-4 rounded bg-white"
-                                    data-animation="scaleIn">
-
-                                    <div class="multisteps-form__content" id="printableArea">
-                                        <h3 class="multisteps-form__title">Transaction Summary</h3>
-                                        <div class="form mt-4" id="summary">
-                                            <div class="form-group">
-                                                <label>Name:</label>
-                                                <input class="form-control" type="text" 
-                                                    id="name" readonly />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email:</label>
-                                                <input class="form-control" type="text" id="email"
-                                                    readonly />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Purpose:</label>
-                                                <input class="form-control" type="text"  id="purpose"
-                                                    readonly />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Appointment Date:</label>
-                                                <input class="form-control" type="text"
-                                                    id="appointment" readonly />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Payment Method:</label>
-                                                <input class="form-control" type="text" id="payment"
-                                                    readonly />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Amount to pay:</label>
-                                                <input class="form-control" type="text" id="amount"
-                                                   value="Php 75.00" readonly/>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-end">
-                                            <div class="p-2">
-                                                <a href="#" id="downloadBtn" class="btn btn-bg-none" download>
-                                                    <i class="bi bi-download fs-4 fw-bolder"></i>
-                                                </a>
-                                            </div>
-                                            <div class="p-2">
-                                                <a id="printBtn" class="btn btn-bg-none"
-                                                    onclick="printDiv('printableArea')" print>
-                                                    <i class="bi bi-printer fs-4 fw-bolder"></i>
-                                                </a>
-                                            </div>
-                                        </div> 
-                                        
-                                        <div class="button-row d-flex mt-4">
-                                            <button class="btn btn-primary js-btn-prev" type="button"
-                                                title="Prev">Prev</button>
-                                            <button class="btn ml-auto"
-                                                style="background-color: #37b5b6; color: #f2f597" type="submit"
-                                                title="Send">Done</button>
-                                        </div>
-                                    </div>
-                                </div>
                             </form>
                         </div>
                     </div>

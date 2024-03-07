@@ -1,33 +1,33 @@
 //Funtionality for the request dynamic table.
 
-function addRow(id, clientName, email, purpose, date, paymentStatus, address) {
+function addRow(application_id, name, email, purpose, appointment_datetime, paymentStatus, address) {
   let requestTableBody = document.getElementById("requestTableBody");
 
   let newRow = `
           <tr>
-              <td>${id}</td>
+              <td>${application_id}</td>
               <td>
                   <div class="client">
                       <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
                       <div class="client-info">
-                          <h4>${clientName}</h4>
+                          <h4>${name}</h4>
                           <small>${email}</small>
                       </div>
                   </div>
               </td>
               <td>${purpose}</td>
-              <td>${date}</td>
+              <td>${appointment_datetime}</td>
               <td>
-                  <select class="payment-status" data-record-id="${id}">
-                      <option value="Not Paid" ${paymentStatus === "Not Paid" ? "selected" : ""}>Not Paid</option>
-                      <option value="Paid" ${paymentStatus === "Paid" ? "selected" : ""}>Paid</option>
+                  <select class="payment-status" data-record-id="${application_id}">
+                      <option value="not paid" ${paymentStatus === "not paid" ? "selected" : ""}>not paid</option>
+                      <option value="paid" ${paymentStatus === "paid" ? "selected" : ""}>paid</option>
                   </select>
               </td>
               <td>
                 <div class="actions">
                 <div class="icon-container print-link" 
-                data-user-id="${id}" 
-                data-name="${clientName}" 
+                data-user-id="${application_id}" 
+                data-name="${name}" 
                 data-address="${address}"
                 data-purpose="${purpose}"> 
              <i class="bi bi-printer"></i>
@@ -50,7 +50,7 @@ function fetchUserData() {
     .then((response) => response.json())
     .then((users) => {
       users.forEach((user) => {
-        addRow(user.id, user.client_name, user.email, user.purpose, user.date, user.payment_status, user.address);
+        addRow(user.application_id, user.name, user.email, user.purpose, user.appointment_datetime, user.payment_status, user.address);
       });
 
       // Event listener for status changes
@@ -91,7 +91,7 @@ function deleteItem(recordId) {
     $.ajax({
       url: "php/delete_user.php",
       method: "POST",
-      data: { id: recordId },
+      data: { application_id: recordId },
       success: function (response) {
         if (response === "success") {
           $(`tr td:first-child:contains("${recordId}")`).closest("tr").remove();
